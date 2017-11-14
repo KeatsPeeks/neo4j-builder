@@ -1,0 +1,79 @@
+@import "./../shared/_variables";
+
+g.node-group {
+    cursor: grab;
+    cursor: -webkit-grab;
+    cursor:-moz-grab;
+
+    &.selected {
+        circle.ring {
+            stroke: #565656;
+        }
+    }
+
+    &.fixed {
+        circle.node {
+            stroke: #fff;
+        }
+    }
+    &.droppable {
+        cursor: pointer;
+    }
+    &.beeing-dragged {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        cursor:-moz-grabbing;
+    }
+
+    &:hover {
+        circle.expander {
+            display: block;
+        }
+    }
+}
+
+circle {
+    &.node {
+        stroke-width: 3px;
+    }
+
+    &.ring {
+        fill: transparent;
+        stroke: transparent;
+        stroke-width: 4px;
+        transition: stroke 0.2s ease;
+    }
+
+    &.cursor {
+        fill: none;
+        stroke: #ABB1BB;
+        stroke-width: 1.4px;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &.expander {
+        display: none;
+        cursor: pointer;
+        fill: colors(primary);
+    }
+    &.expander.expander-inner {
+        fill: colors(info);
+    }
+}
+
+text.label {
+    fill: #808080;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    baseline-shift: -3px;
+    transform: translate(0px, 30px);
+    text-anchor: middle;
+}
+
+// .dragged, .beeing-dragged {
+//     pointer-events: none;
+// }

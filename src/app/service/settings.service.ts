@@ -1,5 +1,5 @@
 import { Injectable, Optional }     from '@angular/core';
-import { Headers, Http }            from '@angular/http';
+import { HttpClient }            from '@angular/common/http';
 import { PropertyAccess }           from '../core';
 import { LocalStorage }             from './local.storage';
 
@@ -11,7 +11,7 @@ export class SettingsService
 
     private storageKey: string = 'neo4j_settings'
 
-    constructor(@Optional() private http: Http)
+    constructor(@Optional() private http: HttpClient)
     {
         // read data from local storage first
         const localSettings = LocalStorage.get(this.storageKey)

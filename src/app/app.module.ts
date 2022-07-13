@@ -2,7 +2,7 @@ import { BrowserModule }    from '@angular/platform-browser';
 import { NgModule }         from '@angular/core';
 import { APP_INITIALIZER }  from '@angular/core';
 import { FormsModule }      from '@angular/forms';
-import { Http, HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { bootstrap }             from './bootstrap';
 import { AppComponent }         from './app.component';
@@ -63,7 +63,7 @@ import { MultiSelectOptionComponent }   from './component';
     imports: [
         BrowserModule,
         BrowserModule,
-        HttpModule,
+        HttpClientModule,
         FormsModule,
         AppRoutingModule
     ],
@@ -71,7 +71,7 @@ import { MultiSelectOptionComponent }   from './component';
         {
             provide: APP_INITIALIZER,
             useFactory: bootstrap,
-            deps: [ Http, SettingsService ],
+            deps: [ HttpClient, SettingsService ],
             multi: true
         },
         SettingsService,

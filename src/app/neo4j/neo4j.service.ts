@@ -1,6 +1,6 @@
 import { Injectable }               from '@angular/core';
-import { Response }                 from '@angular/http';
-import { Headers, Http }            from '@angular/http';
+import { HttpResponse }                 from '@angular/common/http';
+import { HttpHeaders, HttpClient }            from '@angular/common/http';
 import { Debug, SettingsService }   from '../service';
 import { PropertyAccess }           from '../core';
 import { ResultSet, Transaction }   from './orm';
@@ -9,14 +9,14 @@ import { ResultSet, Transaction }   from './orm';
 export class Neo4jService
 {
     private url: string;
-    private headers: Headers;
+    private headers: HttpHeaders;
 
     static DEBUG = true
     static NO_DEBUG = false
 
-    constructor(private http: Http, private settings: SettingsService)
+    constructor(private http: HttpClient, private settings: SettingsService)
     {
-        this.headers = new Headers({
+        this.headers = new HttpHeaders({
             'Content-Type': 'application/json; charset=utf-8',
             'Authorization': this.settings.get('client.authBasic')
         })
@@ -36,7 +36,7 @@ export class Neo4jService
             this.http.post(this.url, { statements: trans.getStatements() }, { headers: this.headers })
                 .map(res => {
                     if (res) {
-                        return res.json()
+                        return res
                     } else {
                         reject(res)
                     }
@@ -91,13 +91,13 @@ export class Neo4jService
             this.http.post(this.url, { statements: trans.getStatements() }, { headers: this.headers })
                 .map(res => {
                     if (res) {
-                        return res.json()
+                        return res
                     } else {
                         reject(res)
                     }
                 })
                 .toPromise()
-                .then((response: Response) => {
+                .then((response: HttpResponse<any>) => {
                     resolve(true)
                 }).catch(err => {
                     reject(err)

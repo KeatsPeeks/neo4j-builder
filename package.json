@@ -1,6 +1,6 @@
 {
-  "name": "neo4j-js-ng2",
-  "version": "0.0.0",
+  "name": "neo4j-builder",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -10,31 +10,31 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.2.4",
-    "@angular/common": "^4.2.4",
-    "@angular/compiler": "^4.2.4",
-    "@angular/core": "^4.2.4",
-    "@angular/forms": "^4.2.4",
-    "@angular/http": "^4.2.4",
-    "@angular/platform-browser": "^4.2.4",
-    "@angular/platform-browser-dynamic": "^4.2.4",
-    "@angular/router": "^4.2.4",
+    "@angular/animations": "^5.2.11",
+    "@angular/common": "^5.2.11",
+    "@angular/compiler": "^5.2.11",
+    "@angular/core": "^5.2.11",
+    "@angular/forms": "^5.2.11",
+    "@angular/platform-browser": "^5.2.11",
+    "@angular/platform-browser-dynamic": "^5.2.11",
+    "@angular/platform-server": "^5.2.11",
+    "@angular/router": "^5.2.11",
     "core-js": "^2.4.1",
     "d3": "^3.5.17",
     "moment": "^2.19.2",
-    "rxjs": "^5.4.2",
+    "rxjs": "^5.5.12",
     "tinycolor2": "^1.4.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",
-    "@angular/compiler-cli": "^4.2.4",
-    "@angular/language-service": "^4.2.4",
+    "@angular/compiler-cli": "^5.2.11",
+    "@angular/language-service": "^5.2.11",
     "@types/node": "~6.0.60",
-    "codelyzer": "~3.2.0",
+    "codelyzer": "~6.0.2",
     "node-sass": "^7.0.1",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.3.3"
+    "typescript": "^2.4.2"
   }
 }

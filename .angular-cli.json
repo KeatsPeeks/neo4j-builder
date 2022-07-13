@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "neo4j-js-ng2"
+    "name": "neo4j-builder"
   },
   "apps": [
     {

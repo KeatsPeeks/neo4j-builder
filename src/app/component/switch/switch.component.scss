@@ -19,13 +19,13 @@
     width: ($size * 2) - 10px;
 
     background-color: colors(danger);
-    @include border-radius($size / 2);
+    @include border-radius($size * 0.5);
 
     .knob {
         width: $size - 4px;
         height: $size - 4px;
         background-color: colors(coal);
-        @include border-radius($size / 2);
+        @include border-radius($size * 0.5);
 
         &.right {
 

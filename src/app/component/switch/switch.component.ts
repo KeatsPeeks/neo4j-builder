@@ -2,7 +2,7 @@ import { Subject, Observable }                      from 'rxjs';
 import { HostListener, ElementRef }                 from '@angular/core';
 import { Input, Output, Component }                 from '@angular/core';
 import { OnInit, HostBinding, EventEmitter }        from '@angular/core';
-import { AfterViewInit, Renderer, ViewChild }       from '@angular/core';
+import { AfterViewInit, ViewChild, Renderer2 }       from '@angular/core';
 
 @Component({
     selector: 'switch-component',

@@ -2,7 +2,7 @@ import { Subject, Observable }                      from 'rxjs';
 import { HostListener, ElementRef }                 from '@angular/core';
 import { Input, Output, Component }                 from '@angular/core';
 import { OnInit, HostBinding, EventEmitter }        from '@angular/core';
-import { AfterViewInit, Renderer, ViewChild }       from '@angular/core';
+import { AfterViewInit, ViewChild, Renderer2 }       from '@angular/core';
 import { CypherQuery, SimpleQuery }                 from '../../neo4j/orm';
 
 @Component({
@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit, AfterViewInit
     @Input('loading') loading: boolean = false;
     @Input('mode') mode: 'normal'|'advanced' = 'normal';
     @Output('onSearch') onSearch = new EventEmitter();
-    @ViewChild('searchInput', { static: false }) searchInput: ElementRef;
+    @ViewChild('searchInput') searchInput: ElementRef;
 
     normalQueryString: string = ''; //  name="Planning de garde" 10,0
     cypherQueryString: string = ''; //'MATCH (a) RETURN a, LABELS(a), ID(a) LIMIT 10';
@@ -52,7 +52,7 @@ export class SearchComponent implements OnInit, AfterViewInit
     ngKlasses: string;
     term: Subject<string> = new Subject();
 
-    constructor(private renderer: Renderer, private elementRef: ElementRef)
+    constructor(private renderer: Renderer2, private elementRef: ElementRef)
     {
 
     }

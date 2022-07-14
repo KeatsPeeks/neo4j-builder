@@ -24,7 +24,7 @@ export class Neo4jRepository
         const transaction = new Transaction()
         const colors = this.settings.get('graph.nodes.displayColorOptions')
 
-        transaction.add(`CALL db.labels() YIELD label RETURN label`)
+        transaction.add(`CALL db.labels() YIELD label RETURN label ORDER BY label`)
 
         return new Promise((resolve, reject) => {
             this.neo4j.commit(transaction, true).then(rawResults => {

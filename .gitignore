@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 neo4j.settings.json
+/.angular

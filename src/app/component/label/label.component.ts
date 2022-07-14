@@ -6,7 +6,7 @@ import { LabelInterface }               from '../../neo4j/model';
 @Component({
     selector: 'label-component',
 template: `<a href="" (click)="click($event)" [ngClass]="['label', label.name]" [ngStyle]="{ 'color': textColor, 'background-color': label.color }">
-        <span [innerText]="label.name"></span><span *ngIf="displayCount" class="count">({{ label.count }})</span>
+        <span [innerText]="label.name"></span>
     </a>`,
     styleUrls: ['./label.component.scss']
 })
@@ -14,7 +14,6 @@ export class LabelComponent implements OnInit
 {
     textColor: string;
     @Input('label') label: LabelInterface;
-    @Input('displayCount') displayCount: boolean = false;
     @Output('onClick') onClick: EventEmitter<any> = new EventEmitter();
 
     constructor()

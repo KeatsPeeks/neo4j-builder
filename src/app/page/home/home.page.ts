@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit, AfterViewInit
 
     labels: Array<any> = [];
     settingsInfo: any;
-    
+
     // @TODO general: use a setting value to distinguish nodes by variable property (defaults to ID)
     // and use distinct INSIDE graph.component
     constructor(private repo: Neo4jRepository, private settings: SettingsService)
@@ -84,13 +84,12 @@ export class HomePageComponent implements OnInit, AfterViewInit
         this.explorerToggled = !this.explorerToggled;
     }
 
-    filterByLabel(e: LabelInterface)
+    searchLabelSample(e: LabelInterface)
     {
         let label = e;
         this.graph.clear();
-        this.onSearch({ mode: 'normal', queryString: `MATCH (a:${label.name}) RETURN a, LABELS(a), ID(a)` })
+        this.onSearch({ mode: 'normal', queryString: `MATCH (a:${label.name}) RETURN a, LABELS(a), ID(a) LIMIT 25` })
     }
-
     onSearch(e: any)
     {
         this.searchLoading = true;

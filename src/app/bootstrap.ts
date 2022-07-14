@@ -1,5 +1,5 @@
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+
+
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { SettingsService } from './service';
 

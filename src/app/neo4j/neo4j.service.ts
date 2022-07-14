@@ -4,6 +4,8 @@ import { HttpHeaders, HttpClient }            from '@angular/common/http';
 import { Debug, SettingsService }   from '../service';
 import { PropertyAccess }           from '../core';
 import { ResultSet, Transaction }   from './orm';
+import { filter, map } from 'rxjs/operators';
+
 
 @Injectable()
 export class Neo4jService
@@ -34,13 +36,13 @@ export class Neo4jService
 
         return new Promise((resolve, reject) => {
             this.http.post(this.url, { statements: trans.getStatements() }, { headers: this.headers })
-                .map(res => {
-                    if (res) {
-                        return res
-                    } else {
-                        reject(res)
-                    }
-                })
+              .pipe(map(res => {
+                if (res) {
+                  return res
+                } else {
+                  reject(res)
+                }
+              }))
                 .toPromise()
                 .then((response: any) => {
 
@@ -89,13 +91,13 @@ export class Neo4jService
 
         return new Promise((resolve, reject) => {
             this.http.post(this.url, { statements: trans.getStatements() }, { headers: this.headers })
-                .map(res => {
-                    if (res) {
-                        return res
-                    } else {
-                        reject(res)
-                    }
-                })
+              .pipe(map(res => {
+                if (res) {
+                  return res
+                } else {
+                  reject(res)
+                }
+              }))
                 .toPromise()
                 .then((response: HttpResponse<any>) => {
                     resolve(true)

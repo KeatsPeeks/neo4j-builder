@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit, AfterViewInit
         label: 'Test',
         relationshipType: 'MY_REL'
     }
-    @ViewChild(GraphComponent) graph: GraphComponent;
+    @ViewChild(GraphComponent, { static: true }) graph: GraphComponent;
 
     saveErrorText: string = null;
     saveSuccessText: string = null;

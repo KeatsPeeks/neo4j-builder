@@ -82,4 +82,6 @@ import { MultiSelectOptionComponent }   from './component';
         AppComponent
     ]
 })
+
 export class AppModule { }
+

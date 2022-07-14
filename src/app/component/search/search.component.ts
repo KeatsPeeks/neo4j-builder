@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit, AfterViewInit
     @Input('loading') loading: boolean = false;
     @Input('mode') mode: 'normal'|'advanced' = 'normal';
     @Output('onSearch') onSearch = new EventEmitter();
-    @ViewChild('searchInput') searchInput: ElementRef;
+    @ViewChild('searchInput', { static: false }) searchInput: ElementRef;
 
     normalQueryString: string = ''; //  name="Planning de garde" 10,0
     cypherQueryString: string = ''; //'MATCH (a) RETURN a, LABELS(a), ID(a) LIMIT 10';

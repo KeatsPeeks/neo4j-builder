@@ -15,7 +15,7 @@ export class SettingsPageComponent implements OnInit, AfterViewInit, OnChanges
     errorText: string = null;
     successText: string = null;
 
-    @ViewChild('settingsEditor') settingsEditor: ElementRef;
+    @ViewChild('settingsEditor', { static: true }) settingsEditor: ElementRef;
 
     constructor(private elementRef: ElementRef, private settings: SettingsService, private router: Router)
     {
